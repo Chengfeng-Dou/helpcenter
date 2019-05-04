@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HelpCenter</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+
+<body>
+<div class="wrapper">
+    <header>
+        <div class="left">
+            <button id="menu" title="Menu" class=""><i class="fa fa-bars fa-2x"></i></button>
+            <h1>Acme CO TNT Division</h1>
+        </div>
+
+    </header>
+    <!--//Header-->
+    <div class="content">
+        <aside>
+            <h2>Site Logo</h2>
+            <div class="controls">
+                <input type="search" id="search" name="search" placeholder="Search the help center...">
+                <label for="search"><i class="fa fa-search"></i></label>
+            </div>
+            <nav class="site-nav">
+                <ul class="nav sidebar-nav">
+                    <li>
+                        <a href="#">What is Jekyll</a>
+                    </li>
+                    <li>
+                        <a href="#">What can I do with Jekyll</a>
+                    </li>
+                    <li>
+                        <a href="#">If something goes wrong?</a>
+                    </li>
+                    <li>
+                        <a href="#">Example: How to develop a help</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Dropdown
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Page four</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 5</a>
+                    </li>
+                    <li>
+                        <a href="#">Last page</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!--//sidebar-->
+        <section style="min-width: 900px">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">2013</a></li>
+                <li class="active">十一月</li>
+            </ul>
+            <div class="col-sm-9 col-md-9 col-lg-9 col-xs-9">
+                <article>
+                    <div class="ui3g-header">
+                        <h1>带炫酷过渡动画效果的响应式隐藏侧边栏界面设计
+                            <span>Responsive Off-canvas Navigation with Gooey Transition Effect</span></h1>
+
+                    </div>
+                </article>
+                <article>
+                    <h2>Resize your browser!</h2>
+                    <h3>在侧边栏打开的状态下缩放你的浏览器，当浏览器小到一定程度的时候，你可以看到侧边栏的“gooey”过渡动画效果。</h3>
+                    <p><strong>Resize your browser with the side navigation open and watch the fun "gooey" transition
+                        take
+                        effect :)</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                </article>
+                <article>
+                    <h2>Post Two</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                </article>
+                <article>
+                    <h2>Post Two</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                </article>
+                <article>
+                    <h2>Post Two</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
+                        quasi
+                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
+                        quis!
+                        Alias commodi, autem.</p>
+                </article>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                侧面
+            </div>
+        </section>
+        <span class="robot">
+            <img th:src="@{img/chat.png}" alt=""/>
+        </span>
+
+
+        <div class="chat-box panel panel-default" hidden="hidden">
+            <div class="talk_con panel-body">
+                <div class="talk_show row pre-scrollable" id="words">
+                </div>
+                <div class="input-group">
+                    <!--suppress HtmlFormInputWithoutLabel -->
+                    <input id='input' placeholder="input the question" class="form-control" type="text" style="border-radius: 0">
+                    <span class="input-group-btn">
+                        <button id="submit" class="btn btn-default" type="button" style="border-radius: 0">submit</button>
+                    </span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+        <!--//body content-->
+    </div>
+    <!--//Main Content-->
+</div>
+
+<script th:src="@{js/jquery.min.js}"></script>
+<script th:src="@{js/bootstrap.js}"></script>
+<script th:src="@{js/robot.js}"></script>
+<script>
+
+    var menu = $('#menu');
+    menu.on('click', function () {
+        $(this).toggleClass('active');
+        $('body').toggleClass('nav-open');
+    });
+
+    menu.click();
+    $('.robot').on('click', function () {
+        var chatBox = $('.chat-box');
+        if (chatBox.attr('hidden') === 'hidden') {
+            chatBox.removeAttr('hidden');
+        } else {
+            chatBox.attr('hidden', 'hidden');
+        }
+    })
+
+
+
+</script>
+</body>
+</html>
