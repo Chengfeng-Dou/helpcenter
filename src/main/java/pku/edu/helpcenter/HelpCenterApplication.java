@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @SpringBootApplication
 public class HelpCenterApplication {
 
+
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
+
 
     public static void main(String[] args) {
         SpringApplication.run(HelpCenterApplication.class, args);

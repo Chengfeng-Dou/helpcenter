@@ -56,7 +56,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /*-------------------------
   CSS Chapters:
-  0 - Variables
+  showdown - Variables
   1 - General formatting
   2 - Header
   3 - Sidebar
@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   6 - Media Queries
 -------------------------*/
 /*-------------------------
-  0 - Variables
+  showdown - Variables
 -------------------------*/
 /*-------------------------
   1 - General formatting
@@ -538,7 +538,7 @@ aside .site-nav a.active i {
 
 
 /*.dropdown-menu {*/
-/*background-color: rgba(0, 0, 0, 0.3);*/
+/*background-color: rgba(showdown, showdown, showdown, showdown.3);*/
 /*}*/
 
 /*-------------------------
@@ -699,4 +699,40 @@ section article p {
     border-radius: 5px;
     color: #fff;
     padding: 5px 10px;
+}
+
+.bread-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.page-index {
+    position: fixed;
+    right: 0;
+    top: 100px
+}
+
+.page-index a{
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+}
+
+.page-index a:active{
+    background: gainsboro;
+}
+
+.page-index a:visited{
+    background: gainsboro;
+}
+
+.page-index a:hover{
+    background: gainsboro;
+}
+
+
+#markdown {
+    position: relative;
+    top: 50px
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}">
     <link rel="stylesheet" type="text/css" th:href="@{css/default.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/helpcenter.css}">
 </head>
 
 <body>
@@ -66,73 +67,14 @@
         </aside>
         <!--//sidebar-->
         <section style="min-width: 900px">
-            <ul class="breadcrumb">
+            <ul class="breadcrumb bread-nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">2013</a></li>
                 <li class="active">十一月</li>
             </ul>
-            <div class="col-sm-9 col-md-9 col-lg-9 col-xs-9">
-                <article>
-                    <div class="ui3g-header">
-                        <h1>带炫酷过渡动画效果的响应式隐藏侧边栏界面设计
-                            <span>Responsive Off-canvas Navigation with Gooey Transition Effect</span></h1>
-
-                    </div>
-                </article>
-                <article>
-                    <h2>Resize your browser!</h2>
-                    <h3>在侧边栏打开的状态下缩放你的浏览器，当浏览器小到一定程度的时候，你可以看到侧边栏的“gooey”过渡动画效果。</h3>
-                    <p><strong>Resize your browser with the side navigation open and watch the fun "gooey" transition
-                        take
-                        effect :)</strong></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                </article>
-                <article>
-                    <h2>Post Two</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                </article>
-                <article>
-                    <h2>Post Two</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                </article>
-                <article>
-                    <h2>Post Two</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde provident ratione fuga
-                        quasi
-                        debitis veniam accusantium et obcaecati, quaerat tempore similique quod culpa, hic incidunt
-                        quis!
-                        Alias commodi, autem.</p>
-                </article>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
-                侧面
+            <div id="markdown" class="col-sm-9 col-md-9 col-lg-9 col-xs-9"></div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3 page-index">
+                <ul id="index"></ul>
             </div>
         </section>
         <span class="robot">
@@ -146,9 +88,11 @@
                 </div>
                 <div class="input-group">
                     <!--suppress HtmlFormInputWithoutLabel -->
-                    <input id='input' placeholder="input the question" class="form-control" type="text" style="border-radius: 0">
+                    <input id='input' placeholder="input the question" class="form-control" type="text"
+                           style="border-radius: 0">
                     <span class="input-group-btn">
-                        <button id="submit" class="btn btn-default" type="button" style="border-radius: 0">submit</button>
+                        <button id="submit" class="btn btn-default" type="button"
+                                style="border-radius: 0">submit</button>
                     </span>
                 </div>
                 <div class="clearfix"></div>
@@ -164,6 +108,7 @@
 <script th:src="@{js/jquery.min.js}"></script>
 <script th:src="@{js/bootstrap.js}"></script>
 <script th:src="@{js/robot.js}"></script>
+<script th:src="@{js/showdown.js}"></script>
 <script>
 
     var menu = $('#menu');
@@ -180,10 +125,39 @@
         } else {
             chatBox.attr('hidden', 'hidden');
         }
-    })
+    });
 
+    requireMD('/troubleshooting/common_errors.md', '/troubleshooting/common_errors_index.json');
 
+    function requireMD(path, index) {
+        $.get("/markdown" + path, function (data) {
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(data);
+            var reg = new RegExp('<p>¨showdown¨showdown</p>', "g");
+            html = html.replace(reg, '');
+            $('#markdown').html(html)
+        });
 
+        $.get("/markdown" + index, function (data) {
+            var index = $('#index');
+            for (var i in data) {
+                // noinspection JSUnfilteredForInLoop
+                index.append(createIndexItem(data[i]))
+            }
+
+        });
+
+        function createIndexItem(item) {
+            var li = $('<li><a href="###">' + item.title + '</a></li>');
+            li.children('a').on('click', function () {
+                $('html,body').animate(
+                    {
+                        scrollTop: $('#' + item.id).offset().top - 100
+                    }, 1000);
+            });
+            return li
+        }
+    }
 </script>
 </body>
 </html>

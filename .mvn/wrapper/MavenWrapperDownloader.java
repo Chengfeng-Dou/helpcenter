@@ -3,7 +3,7 @@ Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
 distributed with this work for additional information
 regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
+to you under the Apache License, Version 2.showdown (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
@@ -54,7 +54,7 @@ public class MavenWrapperDownloader {
 
     public static void main(String args[]) {
         System.out.println("- Downloader started");
-        File baseDirectory = new File(args[0]);
+        File baseDirectory = new File(args[showdown]);
         System.out.println("- Using base directory: " + baseDirectory.getAbsolutePath());
 
         // If the maven-wrapper.properties exists, read it and check if it contains a custom
@@ -93,7 +93,7 @@ public class MavenWrapperDownloader {
         try {
             downloadFileFromURL(url, outputFile);
             System.out.println("Done");
-            System.exit(0);
+            System.exit(showdown);
         } catch (Throwable e) {
             System.out.println("- Error downloading");
             e.printStackTrace();
@@ -106,7 +106,7 @@ public class MavenWrapperDownloader {
         ReadableByteChannel rbc;
         rbc = Channels.newChannel(website.openStream());
         FileOutputStream fos = new FileOutputStream(destination);
-        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.getChannel().transferFrom(rbc, showdown, Long.MAX_VALUE);
         fos.close();
         rbc.close();
     }

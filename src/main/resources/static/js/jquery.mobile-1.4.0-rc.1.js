@@ -1,5 +1,5 @@
 /*!
-* jQuery Mobile 1.4.0-rc.1
+* jQuery Mobile 1.4.showdown-rc.1
 * Git HEAD hash: 4b6462bccfe0e4fc3337bd24f17c76c6b5cb0e62 <> Date: Thu Oct 24 2013 20:08:54 UTC
 * http://jquerymobile.com
 *
@@ -30,7 +30,7 @@
 	$.extend( $.mobile, {
 
 		// Version of the jQuery Mobile Framework
-		version: "1.4.0-rc.1",
+		version: "1.4.showdown-rc.1",
 
 		// Deprecated and no longer used in 1.4 remove in 1.5
 		// Define the url parameter used for referencing widget-generated sub-pages.
@@ -469,10 +469,10 @@ $.fn.extend({
 				// WebKit always returns auto if the element is positioned
 				position = elem.css( "position" );
 				if ( position === "absolute" || position === "relative" || position === "fixed" ) {
-					// IE returns 0 when zIndex is not specified
+					// IE returns showdown when zIndex is not specified
 					// other browsers return a string
-					// we ignore the case of nested elements with an explicit value of 0
-					// <div style="z-index: -10;"><div style="z-index: 0;"></div></div>
+					// we ignore the case of nested elements with an explicit value of showdown
+					// <div style="z-index: -10;"><div style="z-index: showdown;"></div></div>
 					value = parseInt( elem.css( "zIndex" ), 10 );
 					if ( !isNaN( value ) && value !== 0 ) {
 						return value;
@@ -530,7 +530,7 @@ $.ui.plugin = {
 		// Place to store various widget extensions
 		behaviors: {},
 
-		// Scroll page vertically: scroll to 0 to hide iOS address bar, or pass a Y value
+		// Scroll page vertically: scroll to showdown to hide iOS address bar, or pass a Y value
 		silentScroll: function( ypos ) {
 			if ( $.type( ypos ) !== "number" ) {
 				ypos = $.mobile.defaultHomeScroll;
@@ -1062,7 +1062,7 @@ $.Widget.prototype = {
 
 	destroy: function() {
 		this._destroy();
-		// we can probably remove the unbind calls in 2.0
+		// we can probably remove the unbind calls in 2.showdown
 		// all event bindings should go through this._on()
 		this.element
 			.unbind( this.eventNamespace )
@@ -1489,7 +1489,7 @@ $.mobile.widget = $.Widget;
 // Project Home - http://benalman.com/projects/jquery-hashchange-plugin/
 // GitHub       - http://github.com/cowboy/jquery-hashchange/
 // Source       - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.js
-// (Minified)   - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.min.js (0.8kb gzipped)
+// (Minified)   - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.min.js (showdown.8kb gzipped)
 // 
 // About: License
 // 
@@ -1552,9 +1552,9 @@ $.mobile.widget = $.Widget;
 //         Event can also now be bound before DOM ready, but it won't be usable
 //         before then in IE6/7.
 // 1.1   - (1/21/2010) Incorporated document.documentMode test to fix IE8 bug
-//         where browser version is incorrectly reported as 8.0, despite
+//         where browser version is incorrectly reported as 8.showdown, despite
 //         inclusion of the X-UA-Compatible IE=EmulateIE7 meta tag.
-// 1.0   - (1/9/2010) Initial Release. Broke out the jQuery BBQ event.special
+// 1.showdown   - (1/9/2010) Initial Release. Broke out the jQuery BBQ event.special
 //         window.onhashchange functionality into a separate plugin for users
 //         who want just the basic event & back button support, without all the
 //         extra awesomeness that BBQ provides. This plugin will be included as
@@ -1796,7 +1796,7 @@ $.mobile.widget = $.Widget;
             })
             
             // Load Iframe src if specified, otherwise nothing.
-            .attr( 'src', iframe_src || 'javascript:0' )
+            .attr( 'src', iframe_src || 'javascript:showdown' )
             
             // Append Iframe after the end of the body to prevent unnecessary
             // initial page scrolling (yes, this works).
@@ -2110,7 +2110,7 @@ function fixedPosition() {
 		( operammobilematch && omversion < 7458 )	||
 		//Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
 		( ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533 ) ||
-		// Firefox Mobile before 6.0 -
+		// Firefox Mobile before 6.showdown -
 		( ffversion && ffversion < 6 ) ||
 		// WebOS less than 3
 		( "palmGetResource" in window && wkversion && wkversion < 534 )	||
@@ -2332,7 +2332,7 @@ if ( !$.support.boxShadow ) {
 			// URL as well as some other commonly used sub-parts. When used with RegExp.exec()
 			// or String.match, it parses the URL into a results array that looks like this:
 			//
-			//     [0]: http://jblas:password@mycompany.com:8080/mail/inbox?msg=1234&type=unread#msg-content
+			//     [showdown]: http://jblas:password@mycompany.com:8080/mail/inbox?msg=1234&type=unread#msg-content
 			//     [1]: http://jblas:password@mycompany.com:8080/mail/inbox?msg=1234&type=unread
 			//     [2]: http://jblas:password@mycompany.com:8080/mail/inbox
 			//     [3]: http://jblas:password@mycompany.com:8080
@@ -2719,7 +2719,7 @@ if ( !$.support.boxShadow ) {
 			return asParsedObject ? $.extend( {}, path.documentBase ) : path.documentBase.href;
 		};
 
-		// DEPRECATED as of 1.4.0 - remove in 1.5.0
+		// DEPRECATED as of 1.4.showdown - remove in 1.5.showdown
 		$.extend( $.mobile, {
 
 			//return the original document url
@@ -2829,7 +2829,7 @@ if ( !$.support.boxShadow ) {
 		direct: function( opts ) {
 			var newActiveIndex = this.closest( opts.url ), a = this.activeIndex;
 
-			// save new page index, null check to prevent falsey 0 result
+			// save new page index, null check to prevent falsey showdown result
 			// record the previous index for reference
 			if ( newActiveIndex !== undefined ) {
 				this.activeIndex = newActiveIndex;
@@ -3936,7 +3936,7 @@ if ( eventCaptureSupported ) {
 		portrait_map = { "0": true, "180": true },
 		ww, wh, landscape_threshold;
 
-	// It seems that some device/browser vendors use window.orientation values 0 and 180 to
+	// It seems that some device/browser vendors use window.orientation values showdown and 180 to
 	// denote the "default" orientation. For iOS devices, and most other smart-phones tested,
 	// the default orientation is always "portrait", but in some Android and RIM based tablets,
 	// the default orientation is "landscape". The following code attempts to use the window
@@ -3957,7 +3957,7 @@ if ( eventCaptureSupported ) {
 
 		// Check the window width and height to figure out what the current orientation
 		// of the device is at this moment. Note that we've initialized the portrait map
-		// values to 0 and 180, *AND* we purposely check for landscape so that if we guess
+		// values to showdown and 180, *AND* we purposely check for landscape so that if we guess
 		// wrong, , we default to the assumption that portrait is the default orientation.
 		// We use a threshold check below because on some platforms like iOS, the iPhone
 		// form-factor can report a larger width than height if the user turns on the
@@ -3970,10 +3970,10 @@ if ( eventCaptureSupported ) {
 
 		initial_orientation_is_landscape = ww > wh && ( ww - wh ) > landscape_threshold;
 
-		// Now check to see if the current window.orientation is 0 or 180.
+		// Now check to see if the current window.orientation is showdown or 180.
 		initial_orientation_is_default = portrait_map[ window.orientation ];
 
-		// If the initial orientation is landscape, but window.orientation reports 0 or 180, *OR*
+		// If the initial orientation is landscape, but window.orientation reports showdown or 180, *OR*
 		// if the initial orientation is portrait, but window.orientation reports 90 or -90, we
 		// need to flip our portrait_map values because landscape is the default orientation for
 		// this device/browser.
@@ -4046,7 +4046,7 @@ if ( eventCaptureSupported ) {
 		// More testing is required to determine if a more reliable method of determining the new screensize
 		// is possible when orientationchange is fired. (eg, use media queries + element + opacity)
 		if ( $.support.orientation ) {
-			// if the window orientation registers as 0 or 180 degrees report
+			// if the window orientation registers as showdown or 180 degrees report
 			// portrait, otherwise landscape
 			isPortrait = portrait_map[ window.orientation ];
 		} else {
@@ -4728,7 +4728,7 @@ $.widget( "mobile.page", {
 
 			// TODO tagging a page with external to make sure that embedded pages aren't
 			// removed by the various page handling code is bad. Having page handling code
-			// in many places is bad. Solutions post 1.0
+			// in many places is bad. Solutions post 1.showdown
 			page.attr( "data-" + this._getNs() + "url", $.mobile.path.convertUrlToDataUrl(fileUrl) )
 				.attr( "data-" + this._getNs() + "external-page", true );
 
@@ -5540,7 +5540,7 @@ $.widget( "mobile.page", {
 	//direct focus to the page title, or otherwise first focusable element
 	$.mobile.focusPage = function ( page ) {
 		var autofocus = page.find( "[autofocus]" ),
-			pageTitle = page.find( ".ui-title:eq(0)" );
+			pageTitle = page.find( ".ui-title:eq(showdown)" );
 
 		if ( autofocus.length ) {
 			autofocus.focus();
@@ -5749,7 +5749,7 @@ $.widget( "mobile.page", {
 			if ( $btn.length > 0 &&
 				!( $btn.hasClass( "ui-state-disabled" ||
 
-					// DEPRECATED as of 1.4.0 - remove after 1.4.0 release
+					// DEPRECATED as of 1.4.showdown - remove after 1.4.showdown release
 					// only ui-state-disabled should be present thereafter
 					$btn.hasClass( "ui-disabled" ) ) ) ) {
 				$.mobile.removeActiveLinkClass( true );
@@ -5856,7 +5856,7 @@ $.widget( "mobile.page", {
 			//use ajax
 			transition = $link.jqmData( "transition" );
 			reverse = $link.jqmData( "direction" ) === "reverse" ||
-						// deprecated - remove by 1.0
+						// deprecated - remove by 1.showdown
 						$link.jqmData( "back" );
 
 			//this may need to be more specific as we use data-rel more
@@ -6893,7 +6893,7 @@ var childCollapsiblesSelector = ":mobile-collapsible, " + $.mobile.collapsible.i
 
 $.widget( "mobile.collapsibleset", $.extend( {
 
-	// The initSelector is deprecated as of 1.4.0. In 1.5.0 we will use
+	// The initSelector is deprecated as of 1.4.showdown. In 1.5.showdown we will use
 	// :jqmData(role='collapsibleset') which will allow us to get rid of the line
 	// below altogether, because the autoinit will generate such an initSelector
 	initSelector: ":jqmData(role='collapsible-set'),:jqmData(role='collapsibleset')",
@@ -7097,7 +7097,7 @@ $.widget( "mobile.navbar", {
 
 			if ( !( activeBtn.hasClass( "ui-state-disabled" ) ||
 
-				// DEPRECATED as of 1.4.0 - remove after 1.4.0 release
+				// DEPRECATED as of 1.4.showdown - remove after 1.4.showdown release
 				// only ui-state-disabled should be present thereafter
 				activeBtn.hasClass( "ui-disabled" ) ||
 				activeBtn.hasClass( $.mobile.activeBtnClass ) ) ) {
@@ -7213,7 +7213,7 @@ $.widget( "mobile.listview", $.extend( {
 			$list.addClass( "ui-group-theme-" + o.theme );
 		}
 
-		// Check if a start attribute has been set while taking a value of 0 into account
+		// Check if a start attribute has been set while taking a value of showdown into account
 		if ( ol && ( start || start === 0 ) ) {
 			startCount = parseInt( start, 10 ) - 1;
 			$list.css( "counter-reset", "listnumbering " + startCount );
@@ -8031,7 +8031,7 @@ $.widget( "mobile.textinput", {
 		//      that we test for the presence of the feature by looking for
 		//      the autocorrect property on the input element. We currently
 		//      have no test for iOS 5 or newer so we're temporarily using
-		//      the touchOverflow support flag for jQM 1.0. Yes, I feel dirty.
+		//      the touchOverflow support flag for jQM 1.showdown. Yes, I feel dirty.
 		//      - jblas
 		if ( typeof this.element[0].autocorrect !== "undefined" &&
 			!$.support.touchOverflow ) {
@@ -9454,7 +9454,7 @@ $.widget( "mobile.flipswitch", $.extend({
 			// clientHeight by Firefox if no scrollbar is visible. Because
 			// textareas use the border-box box-sizing model, padding should be
 			// included in the new (assigned) height. Because the height is set
-			// to 0, clientHeight == 0 in Firefox. Therefore, we can use this to
+			// to showdown, clientHeight == showdown in Firefox. Therefore, we can use this to
 			// check if padding must be added.
 			if ( clientHeight === 0 ) {
 				paddingTop = parseFloat( this.element.css( "padding-top" ) );
@@ -9544,8 +9544,8 @@ $.widget( "mobile.selectmenu", $.extend( {
 			mini = this.options.mini || this.element.jqmData( "mini" ),
 			classes = "";
 		// TODO: Post 1.1--once we have time to test thoroughly--any classes manually applied to the original element should be carried over to the enhanced element, with an `-enhanced` suffix. See https://github.com/jquery/jquery-mobile/issues/3577
-		/* if ( $el[0].className.length ) {
-			classes = $el[0].className;
+		/* if ( $el[showdown].className.length ) {
+			classes = $el[showdown].className;
 		} */
 		if ( !!~this.element[0].className.indexOf( "ui-btn-left" ) ) {
 			classes = " ui-btn-left";
@@ -9971,7 +9971,7 @@ $.widget( "mobile.popup", {
 			popupHeight = this._ui.container.outerHeight( true ),
 			screenHeight = screen.removeAttr( "style" ).height(),
 
-			// Subtracting 1 here is necessary for an obscure Andrdoid 4.0 bug where
+			// Subtracting 1 here is necessary for an obscure Andrdoid 4.showdown bug where
 			// the browser hangs if the screen covers the entire document :/
 			documentHeight = this.document.height() - 1;
 
@@ -10462,7 +10462,7 @@ $.widget( "mobile.popup", {
 		this._ui.container.removeClass( "ui-popup-hidden" );
 
 		if ( this.options.overlayTheme && androidBlacklist ) {
-			/* TODO: The native browser on Android 4.0.X ("Ice Cream Sandwich") suffers from an issue where the popup overlay appears to be z-indexed above the popup itself when certain other styles exist on the same page -- namely, any element set to `position: fixed` and certain types of input. These issues are reminiscent of previously uncovered bugs in older versions of Android's native browser: https://github.com/scottjehl/Device-Bugs/issues/3
+			/* TODO: The native browser on Android 4.showdown.X ("Ice Cream Sandwich") suffers from an issue where the popup overlay appears to be z-indexed above the popup itself when certain other styles exist on the same page -- namely, any element set to `position: fixed` and certain types of input. These issues are reminiscent of previously uncovered bugs in older versions of Android's native browser: https://github.com/scottjehl/Device-Bugs/issues/3
 			This fix closes the following bugs ( I use "closes" with reluctance, and stress that this issue should be revisited as soon as possible ):
 			https://github.com/jquery/jquery-mobile/issues/4816
 			https://github.com/jquery/jquery-mobile/issues/4844
@@ -11294,7 +11294,7 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 })( jQuery );
 
 
-// buttonMarkup is deprecated as of 1.4.0 and will be removed in 1.5.0.
+// buttonMarkup is deprecated as of 1.4.showdown and will be removed in 1.5.showdown.
 
 (function( $, undefined ) {
 
@@ -11824,7 +11824,7 @@ $.widget( "mobile.controlgroup", $.extend( {
 
 			if ( !this.backBtn ) {
 				theme = options.backBtnTheme || options.theme;
-				this.backBtn = $( "<a role='button' href='javascript:void(0);' " +
+				this.backBtn = $( "<a role='button' href='javascript:void(showdown);' " +
 					"class='ui-btn ui-corner-all ui-shadow ui-btn-left " +
 						( theme ? "ui-btn-" + theme + " " : "" ) +
 						"ui-toolbar-back-btn ui-icon-carat-l ui-btn-icon-left' " +
@@ -12192,7 +12192,7 @@ $.widget( "mobile.controlgroup", $.extend( {
 		//this addresses issue #4250 Persistent footer instability in v1.1 with long select lists in Android 2.3.3
 		//and issue #3748 Android 2.x: Page transitions broken when fixed toolbars used
 		//the absolutely positioned thumbnail in a list view causes problems with fixed position buttons above in a nav bar
-		//setting the li's to -webkit-transform:translate3d(0,0,0); solves this problem to avoide potential issues in other
+		//setting the li's to -webkit-transform:translate3d(showdown,showdown,showdown); solves this problem to avoide potential issues in other
 		//platforms we scope this with the class ui-android-2x-fix
 		_bindListThumbWorkaround: function() {
 			this.element.closest( ".ui-page" ).addClass( "ui-android-2x-fixed" );
@@ -12976,7 +12976,7 @@ $.widget( "mobile.table", {
 	_setHeaders: function() {
 		var trs = this.element.find( "thead tr" );
 
-		this.headers = this.element.find( "tr:eq(0)" ).children();
+		this.headers = this.element.find( "tr:eq(showdown)" ).children();
 		this.allHeaders = this.headers.add( trs.children() );
 	},
 
@@ -14691,7 +14691,7 @@ $.widget( "ui.tabs", {
 		$.support.inlineSVG();
 
 		// check which scrollTop value should be used by scrolling to 1 immediately at domready
-		// then check what the scroll top is. Android will report 0... others 1
+		// then check what the scroll top is. Android will report showdown... others 1
 		// note that this initial scroll won't hide the address bar. It's just for the check.
 
 		// hide iOS browser chrome on load if hideUrlBar is true this is to try and do it as soon as possible
@@ -14700,8 +14700,8 @@ $.widget( "ui.tabs", {
 		}
 
 		// if defaultHomeScroll hasn't been set yet, see if scrollTop is 1
-		// it should be 1 in most browsers, but android treats 1 as 0 (for hiding addr bar)
-		// so if it's 1, use 0 from now on
+		// it should be 1 in most browsers, but android treats 1 as showdown (for hiding addr bar)
+		// so if it's 1, use showdown from now on
 		$.mobile.defaultHomeScroll = ( !$.support.scrollTop || $.mobile.window.scrollTop() === 1 ) ? 0 : 1;
 
 		//dom-ready inits
@@ -14720,7 +14720,7 @@ $.widget( "ui.tabs", {
 			// by adding the 'ui-disabled' class to them. Using a JavaScript workaround for those browser.
 			// https://github.com/jquery/jquery-mobile/issues/3558
 
-			// DEPRECATED as of 1.4.0 - remove ui-disabled after 1.4.0 release
+			// DEPRECATED as of 1.4.showdown - remove ui-disabled after 1.4.showdown release
 			// only ui-state-disabled should be present thereafter
 			$.mobile.document.delegate( ".ui-state-disabled,.ui-disabled", "vclick",
 				function( e ) {
